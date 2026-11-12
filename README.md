@@ -21,20 +21,18 @@
 ## 📌 Project Overview
 This project documents the Week 2 practicals of the Networkwalks Cybersecurity Program (Batch B084). It follows the way an attacker moves through the first two phases of a penetration test: collecting public information about a target without touching it, correlating that information into a relationship graph, harvesting more data from public search engines, and finally discovering live hosts on a network segment.
 
-Four practicals were completed:
+Two practicals were completed:
 
 | Module | Practical | Target / Scope |
 | :--- | :--- | :--- |
 | **W2-PM1** | Footprinting with six Kali Linux tools | `networkwalks.com` (written permission secured) |
 | **W2-PM3** | Link analysis with Maltego | `networkwalks.com` (written permission secured) |
-| **W2-PM4** | Passive OSINT with theHarvester | Public search-engine data (no direct contact with the target) |
 | **W2-PM5** | Host discovery with Zenmap | My own local LAN (`10.0.1.0/24`) |
 
 ```mermaid
 graph TD
-    A[PM1 Fingerprinting] --> B[PM3 Maltego]
-    B --> C[PM4 theHarvester]
-    C --> D[PM5 Zenmap]
+    A[PM1 Fingerprinting] --> 
+     --> B[PM5 Zenmap]
 ```
 
 ---
@@ -57,7 +55,6 @@ Key capabilities practised:
 - WHOIS and DNS intelligence gathering
 - Web technology and WAF fingerprinting
 - HTTP header analysis
-- Link analysis and visual correlation of OSINT data
 - Passive reconnaissance through search engines
 - ARP/ICMP-based host discovery and topology mapping
 
@@ -75,6 +72,4 @@ Key capabilities practised:
 | 📥 curl | HTTP header inspection |
 | 🧱 wafw00f v2.4.2 | WAF detection |
 | 🗺️ dnsrecon | DNS enumeration |
-| 🕸️ Maltego Graph 4.14.0 | Link analysis (Utilities transforms) |
-| 🌾 theHarvester 4.11.1 | Passive OSINT |
 | 🛰️ Zenmap / Nmap 7.99 | Host discovery and topology |
