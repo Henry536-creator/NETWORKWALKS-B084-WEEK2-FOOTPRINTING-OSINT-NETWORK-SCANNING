@@ -31,7 +31,7 @@ Two practicals were completed:
 
 ```mermaid
 graph TD
-    A[PM1 Fingerprinting] --> 
+    A[PM1 Fingerprinting] -->B 
      --> B[PM5 Zenmap]
 ```
 
