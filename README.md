@@ -30,7 +30,7 @@ Two practicals were completed:
 
 ```mermaid
 graph TD
-    A["W2-PM1: Fingerprinting"] -->
+    A["W2-PM1: Fingerprinting"] -->B
  B[W2-PM5: Host Discovery with Zenmap"]
 ```
 
@@ -101,10 +101,10 @@ The WHOIS lookup provided information about the domain's registration, registrar
 
 **Evidence:**
 
-![WHOIS output 1/3](Screenshots/1- Footprinting - who is -1.png)
-![WHOIS output 2/3](Screenshots/2 - footprinting - who is -2.png)
-![WHOIS output 2/3](Screenshots/3 - footprinting - who is -3.png)
-![WHOIS output 2/3](Screenshots/4 - footprinting - who is -3.png)
+![WHOIS output 1/3](screenshots/1-Footprinting-whois-1.png)
+![WHOIS output 2/3](screenshots/2-footprinting-whois-2.png)
+![WHOIS output 2/3](screenshots/3-footprinting-whois-3.png)
+![WHOIS output 2/3](screenshots/4-footprinting-whois-3.png)
 
 **Command:**
 ```bash
@@ -128,7 +128,7 @@ The scan provided information about the website's underlying technologies and so
 
 **Evidence:**
 
-![WhatWeb Screenshot](Screenshots/5 - footprinting - whatweb.png)
+![WhatWeb Screenshot](screenshots/5-footprinting-whatweb.png)
 
 ---
 
@@ -154,7 +154,7 @@ The lookup returned the IP address associated with the domain. DNS information i
 
 **Evidence:**
 
-![nslookup Output](Screenshots/6 - footprinting - nslookup.png)
+![nslookup Output](screenshots/6-footprinting-nslookup.png)
 
 ---
 
@@ -181,7 +181,7 @@ The response provided information about how the web server handled the request, 
 
 **Evidence:**
 
-![curl Output](Screenshots/7 - footprinting - curl.png)
+![curl Output](screenshots/7-footprinting-curl.png)
 
 ---
 
@@ -207,7 +207,7 @@ The tool examined the website's responses to determine whether a Web Application
 
 **Evidence:**
 
-![wafw00f Output](Screenshots/8- footprinting - wafw00f.png)
+![wafw00f Output](screenshots/8-footprinting-wafw00f.png)
 
 ---
 
@@ -236,7 +236,7 @@ The enumeration provided additional information about the domain's DNS configura
 
 **Evidence:**
 
-![dnsrecon Output](Screeshots/9 - footprinting - dnsrecon.png)
+![dnsrecon Output](screeshots/9-footprinting-dnsrecon.png)
 
 | Tool | Information Obtained |
 |---|---|
