@@ -101,10 +101,10 @@ The WHOIS lookup provided information about the domain's registration, registrar
 
 **Evidence:**
 
-![WHOIS output 1/3](1- Footprinting - who is -1.png)
-![WHOIS output 2/3](2 - footprinting - who is -2.png)
-![WHOIS output 2/3](3 - footprinting - who is -3.png)
-![WHOIS output 2/3](4 - footprinting - who is -3.png)
+![WHOIS output 1/3](Screeshots/1- Footprinting - who is -1.png)
+![WHOIS output 2/3](Screeshots/2 - footprinting - who is -2.png)
+![WHOIS output 2/3](Screeshots/3 - footprinting - who is -3.png)
+![WHOIS output 2/3](Screeshots/4 - footprinting - who is -3.png)
 
 **Command:**
 ```bash
@@ -128,7 +128,7 @@ The scan provided information about the website's underlying technologies and so
 
 **Evidence:**
 
-![WhatWeb Screenshot](5 - footprinting - whatweb.png)
+![WhatWeb Screenshot](Screeshots/5 - footprinting - whatweb.png)
 
 ---
 
@@ -154,7 +154,7 @@ The lookup returned the IP address associated with the domain. DNS information i
 
 **Evidence:**
 
-![nslookup Output](6 - footprinting - nslookup.png)
+![nslookup Output](Screeshots/6 - footprinting - nslookup.png)
 
 ---
 
@@ -181,7 +181,7 @@ The response provided information about how the web server handled the request, 
 
 **Evidence:**
 
-![curl Output](7 - footprinting - curl.png)
+![curl Output](Screeshots/7 - footprinting - curl.png)
 
 ---
 
@@ -207,7 +207,7 @@ The tool examined the website's responses to determine whether a Web Application
 
 **Evidence:**
 
-![wafw00f Output](8- footprinting - wafw00f.png)
+![wafw00f Output](Screeshots/8- footprinting - wafw00f.png)
 
 ---
 
@@ -236,7 +236,7 @@ The enumeration provided additional information about the domain's DNS configura
 
 **Evidence:**
 
-![dnsrecon Output](9 - footprinting - dnsrecon.png)
+![dnsrecon Output](Screeshots/9 - footprinting - dnsrecon.png)
 
 | Tool | Information Obtained |
 |---|---|
