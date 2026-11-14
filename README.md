@@ -311,7 +311,7 @@ After entering the target and selecting the appropriate scan profile, I initiate
 
 **Screenshot:**
 
-![Zenmap Host Discovery Scan](screenshots/zenmap.png)
+![Zenmap Host Discovery Scan](zenmap.png)
 
 ### Scan Results and Findings
 
@@ -336,7 +336,7 @@ Zenmap's topology feature was used to visualize the discovered hosts on the netw
 
 **Screenshot:**
 
-![Zenmap Network Topology](screenshots/zenmap2.png)
+![Zenmap Network Topology](zenmap2.png)
 
 ### Conclusion
 
