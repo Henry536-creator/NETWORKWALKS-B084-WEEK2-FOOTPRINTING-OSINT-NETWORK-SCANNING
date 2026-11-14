@@ -1,13 +1,11 @@
 
 <div align="center">
 
-# 🔍 Footprinting, OSINT & Network Scanning
-### Reconnaissance and discovery practicals using Kali Linux tools, Maltego, theHarvester and Zenmap
+# 🔍 Footprinting & Network Scanning
+### Reconnaissance and discovery practicals using Kali Linux tools and Zenmap
 
 [![Skill](https://img.shields.io/badge/Skill-Cybersecurity-red?style=for-the-badge&logo=shield&logoColor=white)](https://github.com)
 [![Kali Linux](https://img.shields.io/badge/Kali_Linux-Recon_Tools-orange?style=for-the-badge&logo=kalilinux&logoColor=white)](https://github.com)
-[![Maltego](https://img.shields.io/badge/Maltego-v4.14.0-green?style=for-the-badge&logo=maltego&logoColor=white)](https://github.com)
-[![theHarvester](https://img.shields.io/badge/theHarvester-v4.11.1-blue?style=for-the-badge&logo=hackthebox&logoColor=white)](https://github.com)
 [![Nmap](https://img.shields.io/badge/Nmap%20%2F%20Zenmap-v7.99-teal?style=for-the-badge&logo=cisco&logoColor=white)](https://github.com)
 [![Phase](https://img.shields.io/badge/Phase-Recon_%26_Scanning-black?style=for-the-badge&logo=letsencrypt&logoColor=white)](https://github.com)
 [![Ethical Hacking](https://img.shields.io/badge/Ethical_Hacking-Practice-darkred?style=for-the-badge&logo=hackthebox&logoColor=white)](https://github.com)
@@ -19,31 +17,38 @@
 ---
 
 ## 📌 Project Overview
-This project documents the Week 2 practicals of the Networkwalks Cybersecurity Program (Batch B084). It follows the way an attacker moves through the first two phases of a penetration test: collecting public information about a target without touching it, correlating that information into a relationship graph, harvesting more data from public search engines, and finally discovering live hosts on a network segment.
+
+This project covers selected practical exercises from Week 2 of the NetworkWalks Cybersecurity Program (Batch B084), focusing on Footprinting (PM1) and Host Discovery (PM5).
+
+The footprinting exercise explores the use of six Kali Linux tools: WHOIS, WhatWeb, nslookup, curl, wafw00f, and dnsrecon. These tools are used to examine domain registration information, DNS records, web technologies, HTTP responses, and web application firewall configurations.
+
+The host discovery exercise focuses on identifying active devices within a local network using Zenmap. It involves determining the local IP address and subnet, performing a network scan, and examining the discovered hosts and their available network information.
+
+This repository presents the practical procedures, commands, findings, and screenshots from both exercises.
 
 Two practicals were completed:
 
 | Module | Practical | Target / Scope |
 | :--- | :--- | :--- |
 | **W2-PM1** | Footprinting with six Kali Linux tools | `networkwalks.com` (written permission secured) |
-| **W2-PM5** | Host discovery with Zenmap | My own local LAN (`10.0.1.0/24`) |
+| **W2-PM5** | Host discovery with Zenmap | My own local LAN (`10.89.72.0/24`) |
 
 ```mermaid
 graph TD
-    A["W2-PM1: Fingerprinting"] -->B
- B[W2-PM5: Host Discovery with Zenmap"]
+    A["W2-PM1: Fingerprinting"] -->
+B["W2-PM5: Host Discovery with Zenmap"]
 ```
 
 ---
 
 ## 🎯 Objectives
-- Collect domain registration, DNS, web-technology and perimeter-defence information about a target using six Kali Linux tools.
-- Correlate a single domain into a graph of e-mail addresses, subdomains, mail servers and websites with Maltego.
-- Harvest hostnames, IPs and email addresses from public sources with theHarvester.
-- Identify the local subnet, discover live hosts, and capture IP and MAC addresses with Zenmap.
-- Interpret every finding from an attacker's point of view and rate its risk.
-- Recommend practical defensive improvements.
-- Document commands, results, problems and lessons learned.
+
+- Examine domain registration and DNS information using footprinting tools.
+- Identify web technologies and WAF information.
+- Analyse HTTP responses and DNS records.
+- Identify the local network subnet using Windows network configuration.
+- Discover active hosts on the local network using Zenmap.
+- Document practical procedures, commands, findings, and screenshots.
 
 ---
 
@@ -53,9 +58,7 @@ These exercises build the skills used in the **Reconnaissance & Footprinting** a
 Key capabilities practised:
 - WHOIS and DNS intelligence gathering
 - Web technology and WAF fingerprinting
-- HTTP header analysis
-- Passive reconnaissance through search engines
-- ARP/ICMP-based host discovery and topology mapping
+- Topology mapping
 
 ---
 
@@ -64,7 +67,6 @@ Key capabilities practised:
 | 🧩 Component | ⚙️ Details |
 | :--- | :--- |
 | 🐉 Recon workstation | Kali Linux (`pentest-serv01`) |
-| 🪟 Link analysis / scanning | Windows PC with Maltego Graph Desktop and Zenmap |
 | 🔎 WHOIS | Domain registration data |
 | 🌐 WhatWeb | Web technology fingerprinting |
 | 📡 nslookup | DNS resolution (via 8.8.8.8) |
@@ -75,9 +77,9 @@ Key capabilities practised:
 
 ---
 
-## 4. Practical Execution and Findings
+## Practical Execution and Findings
 
-### 4.1 WHOIS — Domain Registration Information
+### WHOIS — Domain Registration Information
 
 **Command:**
 ```bash
@@ -106,6 +108,10 @@ The WHOIS lookup provided information about the domain's registration, registrar
 ![WHOIS output 2/3](screenshots/3-footprinting-whois-3.png)
 ![WHOIS output 2/3](screenshots/4-footprinting-whois-3.png)
 
+---
+
+### WhatWeb — Web Technology Fingerprinting
+
 **Command:**
 ```bash
 whatweb networkwalks.com
@@ -132,7 +138,7 @@ The scan provided information about the website's underlying technologies and so
 
 ---
 
-### 4.3 nslookup — DNS Information Gathering
+### nslookup — DNS Information Gathering
 
 **Command:**
 ```bash
@@ -158,7 +164,7 @@ The lookup returned the IP address associated with the domain. DNS information i
 
 ---
 
-### 4.4 curl — HTTP Header Inspection
+### curl — HTTP Header Inspection
 
 **Command:**
 ```bash
@@ -185,7 +191,7 @@ The response provided information about how the web server handled the request, 
 
 ---
 
-### 4.5 wafw00f — Web Application Firewall Detection
+### wafw00f — Web Application Firewall Detection
 
 **Command:**
 ```bash
@@ -211,7 +217,7 @@ The tool examined the website's responses to determine whether a Web Application
 
 ---
 
-### 4.6 dnsrecon — DNS Enumeration
+### dnsrecon — DNS Enumeration
 
 **Command:**
 ```bash
@@ -236,7 +242,7 @@ The enumeration provided additional information about the domain's DNS configura
 
 **Evidence:**
 
-![dnsrecon Output](screeshots/9-footprinting-dnsrecon.png)
+![dnsrecon Output](screenshots/9-footprinting-dnsrecon.png)
 
 | Tool | Information Obtained |
 |---|---|
@@ -250,3 +256,104 @@ The enumeration provided additional information about the domain's DNS configura
 The results demonstrate how multiple reconnaissance tools can be combined to develop a better understanding of a domain's publicly exposed information.
 
 ---
+
+
+## PM5: Network Scanning and Host Discovery Using Zenmap
+
+### Practical Overview
+
+This practical involved using Zenmap, the graphical user interface for Nmap, to perform network scanning and host discovery on my local network. The exercise focused on identifying active devices connected to the network, examining their IP and MAC addresses, and visualizing the discovered hosts.
+
+### Objectives
+
+- Identify the local IP address and network subnet.
+- Perform host discovery using Zenmap.
+- Identify active devices on the local network.
+- Examine the IP and MAC addresses of discovered hosts.
+- Generate a graphical network topology.
+
+### Tools Used
+
+- **Zenmap:** Graphical interface used to perform network scans.
+- **Nmap:** Network discovery and scanning engine.
+- **Windows Command Prompt:** Used to identify local network configuration.
+
+### Identifying Local IP Address and Subnet
+
+Before performing the scan, I used the `ipconfig` command in Windows Command Prompt to identify my laptop's network configuration.
+
+**Command:**
+
+```bash
+ipconfig
+```
+
+**Network Information:**
+
+- Local IPv4 Address: `10.89.72.212`
+- Subnet Mask: `255.255.255.0`
+- Network Subnet: `10.89.72.0/24`
+
+
+### Performing Host Discovery Using Zenmap
+
+I opened Zenmap and entered my local network subnet into the Target field.
+
+The following command was used for host discovery:
+
+```bash
+nmap -sn 10.89.72.0/24
+```
+
+The `-sn` option performs host discovery without conducting a port scan. It helps identify which devices are active on the specified network.
+
+After entering the target and selecting the appropriate scan profile, I initiated the scan and allowed Zenmap to discover the active hosts.
+
+**Screenshot:**
+
+![Zenmap Host Discovery Scan](screenshots/zenmap.png)
+
+### Scan Results and Findings
+
+After the scan was completed, Zenmap displayed the hosts discovered on my local network.
+
+**Scan Summary:**
+
+- Network Scanned: `10.89.72.0/24`
+- Total Live Hosts: `2`
+
+**Discovered Hosts:**
+
+| S/N | IP Address | MAC Address |
+|---|---|---|
+| 1 | `10.89.72.202` | `36:52:8D:02:D1:6F` |
+| 2 | `10.89.72.212` | `Not available` |
+
+
+### Network Topology Visualization
+
+Zenmap's topology feature was used to visualize the discovered hosts on the network. This provided a graphical representation of the scan results and helped illustrate the devices identified during host discovery.
+
+**Screenshot:**
+
+![Zenmap Network Topology](screenshots/zenmap2.png)
+
+### Conclusion
+
+This practical provided hands-on experience with network scanning and host discovery using Zenmap. I learned how to identify my local IP address and network subnet, perform host discovery, identify active devices, examine their IP and MAC addresses, and visualize the discovered network topology.
+
+The exercise improved my understanding of basic network reconnaissance and the use of Nmap for identifying devices on a local network.
+
+---
+
+##  Documentation
+Findings are only useful when they are clearly documented: what was done, what was seen, why it matters, and how to reduce the risk.
+
+📄 **Full report:** [W2-PM-FINAL Penetration Testing Report (PDF)](W2-PM-Report.pdf)
+
+## 👤 Author
+**Adebusola Henry**
+* Network Operations Center & Cybersecurity
+* Networkwalks Cybersecurity Program (Batch B084)
+* **LinkedIn:** [https://www.linkedin.com/in/adebusola-henry-5a009a372/](https://www.linkedin.com/in/adebusola-henry-5a009a372/)
+
